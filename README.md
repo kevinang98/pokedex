@@ -1,6 +1,7 @@
 ## Pokedex
 
 Why use mysql or mongodb?
+
 ```For user, I prefer to use mysql because maybe in the future, there are several case that need relationship between table, for example transaction table for purchase in-game data and the structure table should be rarely to change. For pokedex, I prefer to use mongodb because in game case, there will be update that maybe need to add or remove data from pokemon attribute. Therefore nosql should be cover that and pokemon data has a lot of object data that if implemented in sql database, will have many tables.```
 
 How to run:
