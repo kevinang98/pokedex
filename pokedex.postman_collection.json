@@ -86,7 +86,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3Njg4NDkxNX0.nBd01UCLN-N5asAM_O-TYGQQJcwISr86YOvPIO9t_ms",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3NjkxNzM1MH0.TPyR3nufUB0n3JEYg1TFooBkdBhcTSNgUXnGM50bkrI",
 						"type": "text"
 					},
 					{
@@ -97,7 +97,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"data\": {\n        \"pid\": [\n            \"4\",\n            \"5\",\n            \"6\"\n        ]\n    }\n}",
+					"raw": "{\n    \"data\": {\n        \"pid\": [\n            8,\n            9\n        ]\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
