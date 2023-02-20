@@ -21,4 +21,5 @@ const (
 	ErrorOffsetLimitParam  = "offset param must be 0 or greater, limit must be greater than 0"
 	ErrorSortParam         = "sort param must be name or pid or empty"
 	ErrorOrderParam        = "order param must be asc or desc or empty"
+	ErrorQueryUsernameUsed = "username already used"
 )

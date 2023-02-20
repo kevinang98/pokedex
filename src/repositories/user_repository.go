@@ -52,7 +52,7 @@ func (u *UserRepositoryImpl) RegisterUser(username, password, role string) error
 			return err
 		}
 		if m.Number == 1062 {
-			return errors.New("username already used")
+			return errors.New(models.ErrorQueryUsernameUsed)
 		}
 		return err
 	}
