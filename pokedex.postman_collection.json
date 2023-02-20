@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "07a8acc7-b1a1-4d4e-bab3-f79918f10b0a",
+		"name": "pokedex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6853986"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Captured Pokemon",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3Njg4NDkxNX0.nBd01UCLN-N5asAM_O-TYGQQJcwISr86YOvPIO9t_ms",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"pid\": [\n            \"4\",\n            \"5\",\n            \"6\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/captured-pokemon",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"captured-pokemon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pokedex",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3Njg4NTc3OX0.xyBo3TImeuWFpPA2y7mCWoUyt5WsAGH3mBYqLgHGE0M",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/pokedex?name=a&type=Dragon&sort=name&order=desc&offset=0&limit=2&option=uncatched",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pokedex"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "a"
+						},
+						{
+							"key": "type",
+							"value": "Dragon"
+						},
+						{
+							"key": "sort",
+							"value": "name"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "option",
+							"value": "uncatched"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Pokedex",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3NjgzNDYyMX0.sXjJ-BEXmdD56viCd0tQP7lPjefuy1IezTUYKjIDXxg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"pid\": 1,\n            \"name\": \"Charizard\",\n            \"race\": \"Dragon Monster\",\n            \"type\": [\n                \"Dragon\",\n                \"Fire\"\n            ],\n            \"description\": {\n                \"detail\": \"Red fire dragon\",\n                \"weight\": \"150kg\",\n                \"height\": \"10m\"\n            },\n            \"stats\": {\n                \"hp\": 100,\n                \"attack\": 30,\n                \"def\": 25,\n                \"speed\": 15\n            },\n            \"image\": \"charizard.jpg\"\n        },\n        {\n            \"pid\": 2,\n            \"name\": \"Squirtle\",\n            \"race\": \"Sea Monster\",\n            \"type\": [\n                \"Water\"\n            ],\n            \"description\": {\n                \"detail\": \"Blue turtle\",\n                \"weight\": \"10kg\",\n                \"height\": \"1m\"\n            },\n            \"stats\": {\n                \"hp\": 30,\n                \"attack\": 8,\n                \"def\": 10,\n                \"speed\": 5\n            },\n            \"image\": \"squirtle.jpg\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/pokedex",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pokedex"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pokedex",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3NjgzNjY1N30.veJHC9BdGO2Q524V2pNL4DpNyPv_UYArcCtjVBhTggE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"pid\": 3,\n            \"name\": \"Dialga\",\n            \"race\": \"Space Monster\",\n            \"type\": [\n                \"Dragon\",\n                \"Steel\"\n            ],\n            \"description\": {\n                \"detail\": \"Legendary space monster\",\n                \"weight\": \"125kg\",\n                \"height\": \"12m\"\n            },\n            \"stats\": {\n                \"hp\": 150,\n                \"attack\": 35,\n                \"def\": 30,\n                \"speed\": 20\n            },\n            \"image\": \"dialga.jpg\"\n        },\n        {\n            \"pid\": 1,\n            \"name\": \"Charizard\",\n            \"race\": \"Dragon Monster\",\n            \"type\": [\n                \"Dragon\",\n                \"Fire\"\n            ],\n            \"description\": {\n                \"detail\": \"Red fire dragon\",\n                \"weight\": \"110kg\",\n                \"height\": \"10m\"\n            },\n            \"stats\": {\n                \"hp\": 110,\n                \"attack\": 30,\n                \"def\": 25,\n                \"speed\": 15\n            },\n            \"image\": \"charizard.jpg\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/pokedex",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pokedex"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pokedex",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY3Njg3OTg4MH0.tN_ZSIHPVev1B9eF4998DCsDOdI587CZJTqVKjXg_F0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"pid\": [\n            2,\n            3\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/pokedex",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pokedex"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
